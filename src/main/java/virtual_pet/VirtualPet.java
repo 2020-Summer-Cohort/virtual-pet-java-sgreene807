@@ -8,36 +8,54 @@ public class VirtualPet {
     private int boredom = 10;
     private int waste = 5;
 
-    public int feed(){
-        return this.hunger -= 5;
+    public void feed() {
+        this.waste++;
+        this.hunger -= 2;
+
     }
 
-    public int thirst(){
-        return this.thirst -= 5;
+    public void water() {
+        this.waste++;
+        this.thirst -= 2;
     }
 
-    public int boredom(){
-        return this.boredom -=2;
+    public void play() {
+        this.hunger++;
+        this.thirst++;
+        this.boredom -= 2;
     }
 
-    public int waste(){
-        return this.waste--;
+    public void takeOutside() {
+        this.waste--;
     }
 
-    public int getHunger(){
-    return this.hunger;
+    public int getHunger() {
+        return this.hunger;
     }
 
     public int getThirst() {
-    return this.thirst;
+        return this.thirst;
     }
 
     public int getBoredom() {
-    return this.boredom;
+        return this.boredom;
     }
 
     public int getWaste() {
-    return this.waste;
+        return this.waste;
     }
 
+    public void tick() {
+        this.hunger++;
+        this.thirst++;
+        this.boredom++;
+        this.waste++;
+    }
+
+
 }
+
+
+
+
+
